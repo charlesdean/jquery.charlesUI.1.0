@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>max or min</title>
+		<link rel="stylesheet" type="text/css" href="../../css/moudle/thems/default/panel.css"/>
+		<script src="../../jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+	<!--	<script src="../../plugs/panel.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$("#btnMin").on("click",function(){
+					
+					$("#btnMin,.max_min_panel").hide();
+				
+					$(".title").css("width","160px");
+					$("#btnMax").show();
+			
+				
+				})
+				$("#btnMax").on("click",function(){
+					
+					$(this).hide();
+					$(".title").css("width",document.body.clientWidth);
+					
+					$(".max_min_panel").css({
+						
+						width:document.documentElement.clientWidth - 20,
+						height:document.documentElement.clientHeight -20
+						
+					});
+					$("#btnMin,.max_min_panel").show();
+				
+					
+				})
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<p><h1>Max Or Min Panel</h1></p>
+		<div class="title">
+			<button class="btn_max" id="btnMax">□</button>
+			<button class="btn_min" id="btnMin">－</button>
+			
+		</div>
+		<div class="max_min_panel">
+			支持最大化和最小化
+		</div>
+	</body>
+</html>

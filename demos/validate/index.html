@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>验证</title>
+		<link rel="stylesheet" type="text/css" href="../../thems/default/validate.css"/>
+		<script src="../../jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugs/validate.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+			
+			<p class="explain">	
+				
+				使用说明：此插件依赖于Jquery要想实现效果必须先引入jquery的js库,然后引入plugs/validate.js
+			</p>
+			
+	
+		<div class="validatebox">
+			<p class="explain"><h3>这是一个验证的文本框,不允许输入非法字符</h3></p>
+			
+				用户名：<input class="textFiled-validatebox" maxlength="20"/>
+			<p style="color: red;">如：~!@#$%^*等</p>
+			<p style="color: darkcyan;">
+				&lt;input class="textFiled-validatebox"/&gt;
+			</p>
+		</div>
+		<div class="validatebox">
+			<p><h3>这是一个eamil的文本框</h3></p>
+			
+			邮箱：<input class="email-validatebox" />
+			<p style="color: red;">格式：xx@oo.com等</p>
+			<p style="color: darkcyan;">
+				&lt;input class="email-validatebox"/&gt;
+			</p>
+		</div>
+		
+	</body>
+</html>

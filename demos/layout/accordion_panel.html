@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Accordion panel</title>
+		<link rel="stylesheet" type="text/css" href="../../thems/default/panel.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/buttons.css"/>
+		<script src="../../jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../plugs/panel.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		
+				/*
+				 默认关闭
+				 * 
+				 * 
+				 * 
+				 * */
+				$(function(){
+					
+					$("#btnDown").hide();
+					$("#btnUp").on("click",function(){
+					
+						
+						$(".basic_panel").slideUp("1000",function(){
+							
+							$("#btnUp").hide();
+							$("#btnDown").show();
+						});
+						
+					});
+					$("#btnDown").on("click",function(){
+						
+						
+						$(".basic_panel").slideDown("1000",function(){
+							
+							$("#btnDown").hide();
+							$("#btnUp").show();
+							
+						});
+						
+					});
+					
+					//初始化时。所有的panel隐藏当我按下一个down判断上一个
+					
+					
+					
+					
+					
+				})
+		</script>
+
+	</head>
+	<body>
+
+		<p><h1>Accordion Panel</h1></p>
+
+			<div class="title">
+				
+				<button class="btn_up" id="btnUp">▲</button>
+				<button class="btn_down" id="btnDown">▼</button>
+				
+			</div>
+			<div class="basic_panel">
+				
+				这是一个手风琴面板
+			
+			</div>
+				<div class="title">
+				
+				<button class="btn_up" id="btnUp">▲</button>
+				<button class="btn_down" id="btnDown">▼</button>
+				
+			</div>
+			<div class="basic_panel">
+				
+				这是一个手风琴面板
+			
+			</div>
+				<div class="title">
+				
+				<button class="btn_up" id="btnUp">▲</button>
+				<button class="btn_down" id="btnDown">▼</button>
+				
+			</div>
+			<div class="basic_panel">
+				
+				这是一个手风琴面板
+			
+			</div>
+			
+
+		
+	</body>
+</html>

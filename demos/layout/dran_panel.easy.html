@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Drag panel</title>
+		<link rel="stylesheet" type="text/css" href="../../thems/default/panel.css"/>
+		<script src="../../jquery-1.8.2.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../../plugs/panel.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				
+				//0默认值1内部按下2代表在边缘按下
+				var buttonClick = 0;
+				//拖动的方向
+				var aspect = "enable";
+				//panel距离左边的边距
+				var m =  parseInt($(".panel").offset().left);
+				//panel距离顶部的边距
+				var n =  parseInt($(".panel").offset().top);
+				//当前鼠标的x坐标以body 左上角（0,0）
+				var x;
+				//当前鼠标的y坐标
+				var y;
+				//返回拖动指针的状态如果为true：在边缘
+				//拖动锁机制默认关闭关闭,如果不在边缘上为默认图标：边缘上为拖动图标
+				//true 拖拽图标支持拖拽 false 内部普图标
+				var lock = false;
+				//此方法不适合
+
+	
+				$(".panel").on("mousedown",function(e){
+					
+				
+					//判断在那个边缘上(八个方向)
+				
+					//判断按下的位置边缘上还是边缘内	
+					
+					if(!lock){
+						//边缘内
+						buttonClick = 1;
+						
+					}else if(lock){
+						//边缘上
+						//鼠标指针图标变为默认
+						buttonClick = 2;
+						
+					}else{
+						
+						buttonClick = 0;
+					}
+				
+					
+					
+				});
+				$(".panel").on("mouseup",function(e){
+					
+					
+					
+					//判断所在的位置 
+					//如果在内部上图标为普通指针
+				//	alert(buttonClick);
+					buttonClick = 0;
+					
+				});
+
+				//鼠标移动是改变大小
+				$(".panel").on("mousemove",function(e){
+					
+					//移动的时候判断鼠标指针的位置
+					
+					x  = e.pageX;
+					y  = e.pageY;
+					// 是否开启拖动
+					if(!lock){
+						
+						$(".panel").css("cursor","default");
+						
+					}
+					
+					//表达式的问题
+					if((m + $(".panel").innerWidth() - m <= 10) && (n+$(".panel").innerHeight() - y <= 10)){
+
+						//右下角
+			
+						$(this).hover(function(){	
+							
+							$(".panel").css("cursor","se-resize");
+						});
+						
+						aspect = "right_down";
+						lock = true;
+						
+					}
+					else if(m + $(".panel").innerWidth() - x<= 10 ){
+						
+						//右边
+			
+						$(this).hover(function(){
+								
+							$(".panel").css("cursor","e-resize");
+						});
+						aspect = "right";
+						lock = true;
+			
+					}
+					else if(n+$(".panel").innerHeight() - y<= 10){
+						//下边
+				
+						$(".panel").hover(function(){
+							
+							$(".panel").css("cursor","s-resize");
+						});
+						aspect = "down";
+						lock = true;
+			
+					}else{
+						
+						lock = false;
+					}
+				
+					
+					//判断是否监听到按下事件
+					if(buttonClick != 0){
+						
+						//鼠标按下了
+						if(buttonClick == 2){
+							
+//							alert(buttonClick);
+							//边缘按下并且移动
+							//判断在哪个边缘移动的方向
+							if(aspect == "right"){
+								//向右
+								//只改变他的横坐标
+								$(".title").css("width",x);
+								$(this).css("width",x);
+								
+							}else if(aspect == "down"){
+								//向下只改变面板的高度
+								//不改变title的宽和高
+								$(this).css("height",y);
+								
+							}else if(aspect == "right_down"){
+								//右下
+								//title 的宽度要变panel的高度宽度都要改变
+								$(".title").css("width",x);
+								$(this).css({
+									
+									width:x,
+									height:y
+									
+								});
+							}else{
+								
+								lock = false;
+
+							}
+							
+						}else {
+							//内部按下移动失效图标不改变
+						
+							lock = false;
+
+							
+						}
+					}else{
+						
+						//鼠标未按下，并且lock = true 
+						buttonClick = 0;
+						//alert(buttonClick);
+					}
+					
+				//	alert(buttonClick);
+					
+				});
+/*				$(".panel").on("mousemove",function(){
+					
+					
+					
+				});*/
+				$("#btnClose").on("click",function(){
+								
+								
+					$(".title,.panel").hide();
+								
+				});
+			})
+			
+		</script>
+	</head>
+	<body>
+		<p><h1>Max Or Min Panel</h1></p>
+		<div class="title">
+			<button class="btn" id="btnClose">×</button>
+			
+		</div>
+		<div class="panel">
+			支持拖拽改变大小
+		</div>
+	</body>
+</html>

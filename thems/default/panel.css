@@ -1,0 +1,105 @@
+/*
+ * less版本的
+	多继承
+	最基础的面板只有关闭功能
+	主题套装：
+	面板实现
+	1.最大最小化
+	2.支持滑动
+	3.支持拖拽
+	4.支持嵌套*
+	
+*/
+
+body{
+	
+	background-color: burlywood;
+}
+	.panel{
+		
+		width: 320px;
+		height: 240px;
+		background-color: #FFFFFF;
+		
+	}
+	.accordion_panel{
+		
+		width: 320px;
+		height: 240px;
+		background-color: #FFFFFF;
+	}
+	.basic_panel{
+		
+		width: 320px;
+		height: 240px;
+		background-color: #FFFFFF;
+	}
+	.close_panel{
+		
+		width: 320px;
+		height: 240px;
+		background-color: #FFFFFF;
+	}
+	.drag_panel{
+		
+		width: 320px;
+		height: 240px;
+		background-color: #FFFFFF;
+	}
+	.max_min_panel{
+		
+		width: 320px;
+		height: 240px;
+		background-color: #FFFFFF;
+	}
+	.title{
+		
+		width: 320px;
+		height: 30px;
+		border-color: white;
+		background-color: #0000FF;
+	}
+	.btn{
+					
+		float: right;
+		height: 30px;
+		width: 30px;
+		background-color: #0000FF;
+	}
+		.btn_up{
+			
+			float: right;
+			height: 30px;
+			width: 30px;
+			background-color: #0000FF;
+		}
+		.btn_down{
+			
+			float: right;
+			height: 30px;
+			width: 30px;
+			background-color: #0000FF;
+			
+		}
+		.btn_close{
+			
+			float: right;
+			height: 30px;
+			width: 30px;
+			background-color: #0000FF;
+			
+		}
+		.btn_max{
+			
+			float: right;
+			height: 30px;
+			width: 30px;
+			background-color: #0000FF;
+		}
+		.btn_min{
+			
+			float: right;
+			height: 30px;
+			width: 30px;
+			background-color: #0000FF;
+		}

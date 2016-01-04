@@ -1,0 +1,70 @@
+@import '../color.less';
+@bgcolor:burlywood;
+body{
+    
+    background-color: @bgcolor;
+}
+//属性混合高度宽度设定默认值
+.panel(@width:320px;@height:240px){
+    
+    width: @width;
+    height: @height;
+    background-color: @panelbgcolor;
+}
+//当.panel(),
+    .accordion_panel{
+        
+        .panel;
+    }
+    .basic_panel{
+        
+       .panel;
+    }
+    .close_panel{
+        
+       .panel;
+    }
+    .drag_panel{
+        
+       .panel;
+    }
+    .max_min_panel{
+        
+       .panel;
+    }
+    .title{
+        
+        width: 320px;
+        height: 30px;
+        border-color: white;
+        background-color: @titlebgcolor;
+    }
+    .btn(@btnbgcolor:@titlebgcolor){
+                    
+        float: right;
+        height: 30px;
+        width: 30px;
+        background-color: @btnbgcolor;
+    }
+        .btn_up{
+            
+            .btn;
+        }
+        .btn_down{
+            
+            .btn;
+            
+        }
+        .btn_close{
+            
+          .btn(red);
+            
+        }
+        .btn_max{
+            
+           .btn;
+        }
+        .btn_min{
+            
+            .btn;
+        }

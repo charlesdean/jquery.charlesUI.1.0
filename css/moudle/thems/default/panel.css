@@ -1,0 +1,64 @@
+body {
+  background-color: #deb887;
+}
+.accordion_panel {
+  width: 320px;
+  height: 240px;
+  background-color: #ffffff;
+}
+.basic_panel {
+  width: 320px;
+  height: 240px;
+  background-color: #ffffff;
+}
+.close_panel {
+  width: 320px;
+  height: 240px;
+  background-color: #ffffff;
+}
+.drag_panel {
+  width: 320px;
+  height: 240px;
+  background-color: #ffffff;
+}
+.max_min_panel {
+  width: 320px;
+  height: 240px;
+  background-color: #ffffff;
+}
+.title {
+  width: 320px;
+  height: 30px;
+  border-color: white;
+  background-color: #0000ff;
+}
+.btn_up {
+  float: right;
+  height: 30px;
+  width: 30px;
+  background-color: #0000ff;
+}
+.btn_down {
+  float: right;
+  height: 30px;
+  width: 30px;
+  background-color: #0000ff;
+}
+.btn_close {
+  float: right;
+  height: 30px;
+  width: 30px;
+  background-color: #ff0000;
+}
+.btn_max {
+  float: right;
+  height: 30px;
+  width: 30px;
+  background-color: #0000ff;
+}
+.btn_min {
+  float: right;
+  height: 30px;
+  width: 30px;
+  background-color: #0000ff;
+}
